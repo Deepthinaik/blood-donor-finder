@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#9f1239" />
+  <title>LifeLink — Blood Donor Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span> A small search can make a life-changing difference <span class="announce-right">Prototype · Fictional sample data</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="LifeLink home"><span class="brand-mark">✚</span><span>Life<span class="brand-accent">Link</span></span></a>
+    <nav><a href="#find">Find donors</a><a href="#how">How it works</a><a href="#safety">Safety</a></nav>
+    <button class="nav-cta" onclick="document.querySelector('#find').scrollIntoView({behavior:'smooth'})">Find a donor <span>↗</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> COMMUNITY-POWERED DONOR DISCOVERY</div>
+        <h1>When every<br>moment <em>matters.</em></h1>
+        <p class="hero-lead">Find potential blood donors around your area. Search thoughtfully, understand every match, and send a safe contact request.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#find">Explore donor directory <span>→</span></a><a class="text-link" href="#how">See how it works</a></div>
+        <div class="hero-proof"><div class="avatar-stack"><span>R</span><span>A</span><span>M</span><span>+</span></div><div><strong>Every connection starts with care.</strong><small>Demo directory · No real personal data</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="blood-drop"><span>✚</span></div>
+        <div class="float-card float-top"><span class="mini-icon">⌖</span><div><strong>Local discovery</strong><small>Search by broad area</small></div><i class="green-dot"></i></div>
+        <div class="float-card float-bottom"><span class="mini-icon heart">♡</span><div><strong>Privacy first</strong><small>No phone numbers shown</small></div><i class="green-dot"></i></div>
+        <div class="art-caption">A safer way to find a helping hand.</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong id="stat-total">12</strong><span>Sample profiles</span></div><div><strong id="stat-available">8</strong><span>Marked available</span></div><div><strong>8</strong><span>Blood groups</span></div><div><strong>100%</strong><span>Fictional data</span></div>
+    </section>
+
+    <section class="directory section" id="find">
+      <div class="section-heading"><div><div class="eyebrow">THE DONOR DIRECTORY</div><h2>Find a match <em>nearby.</em></h2><p>Choose a blood group and broad location to explore sample matches.</p></div><div class="live-label"><span class="green-dot"></span> Demo directory live</div></div>
+      <div class="search-panel">
+        <div class="field"><label for="bloodGroup">Blood group needed</label><div class="select-wrap"><span class="field-symbol">✚</span><select id="bloodGroup"><option value="">All blood groups</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div></div>
+        <div class="field"><label for="location">Location / area</label><div class="select-wrap"><span class="field-symbol">⌖</span><select id="location"><option value="">All areas</option><option>Bengaluru North</option><option>Indiranagar</option><option>Whitefield</option><option>Jayanagar</option><option>Koramangala</option><option>Rajajinagar</option><option>Electronic City</option></select></div></div>
+        <div class="field"><label for="availability">Availability</label><div class="select-wrap"><span class="field-symbol">◷</span><select id="availability"><option value="all">Any status</option><option value="available">Available</option><option value="unavailable">Not available</option></select></div></div>
+        <button class="search-btn" id="searchBtn">Search donors <span>→</span></button>
+        <button class="reset-btn" id="resetBtn" title="Reset filters">↺</button>
+      </div>
+      <div class="result-toolbar"><div><strong id="resultCount">12 donors</strong><span> matching your filters</span></div><div class="sort-control"><label for="sortBy">Sort by</label><select id="sortBy"><option value="match">Best match</option><option value="name">Name</option><option value="area">Area</option></select></div></div>
+      <div id="matchNotice" class="match-notice" hidden></div>
+      <div class="donor-grid" id="donorGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden><div class="empty-icon">⌕</div><h3>No donors found</h3><p>Try another blood group or broaden your location filter.</p><button class="outline-btn" id="emptyReset">Clear all filters</button></div>
+      <p class="demo-note"><span>ⓘ</span> Profiles are fictional examples for this prototype. Blood compatibility and actual availability must always be confirmed by qualified medical staff and the donor.</p>
+    </section>
+
+    <section class="how-section section" id="how">
+      <div class="section-heading"><div><div class="eyebrow">SIMPLE. RESPECTFUL. SAFE.</div><h2>From search to <em>connection.</em></h2></div></div>
+      <div class="steps"><article><span class="step-num">01</span><div class="step-icon">⌕</div><h3>Search</h3><p>Filter the fictional directory by blood group, broad area, and availability status.</p></article><article><span class="step-num">02</span><div class="step-icon">◎</div><h3>Review the match</h3><p>Inspect the donor's sample profile and see exactly which criteria matched.</p></article><article><span class="step-num">03</span><div class="step-icon">♡</div><h3>Request contact</h3><p>Submit a simulated request. No private contact details are exposed.</p></article></div>
+    </section>
+
+    <section class="safety-section section" id="safety">
+      <div class="safety-icon">盾</div><div><div class="eyebrow">IMPORTANT SAFETY NOTE</div><h2>Designed with <em>privacy first.</em></h2><p>This is an educational prototype, not a medical service. A directory match does not confirm donor eligibility, compatibility, or availability. In an emergency, contact a hospital, blood bank, or official emergency service immediately. Never rely on this demo as the sole source of help.</p></div>
+      <div class="safety-points"><span>✓ Fictional donor IDs</span><span>✓ No phone numbers displayed</span><span>✓ Simulated requests only</span></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">✚</span><span>Life<span class="brand-accent">Link</span></span></a><span>TECH-QUEST 2.0 · Blood Donor Finder Prototype</span><span>Built for a safer first step.</span></footer>
+
+  <div class="modal-backdrop" id="donorModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
